@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d19">
+<meta name="description" content="Hana Salah Masood — Software Engineer focused on backend systems, distributed computing, and AI.">
+<title>Hana Salah Masood | Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --night:#090d19;--night-2:#101729;--panel:#141d30;--panel-2:#1a263b;
+ --ivory:#f4f0e7;--silver:#c5cede;--muted:#8d9ab0;--gold:#c5a875;
+ --line:rgba(197,206,222,.16);--glow:rgba(190,205,231,.16);
+ --serif:"Cinzel",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;
+ --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--night);color:var(--ivory);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 78% 10%,rgba(111,132,174,.13),transparent 34%),radial-gradient(ellipse at 10% 55%,rgba(104,119,151,.08),transparent 38%),linear-gradient(180deg,#090d19 0%,#0b1120 55%,#090d19 100%)}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+::selection{background:var(--gold);color:var(--night)}
+#stars{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.6}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+.section{padding:112px 0;position:relative}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
+.eyebrow:before{content:"";width:30px;height:1px;background:var(--gold)}
+.section-heading{font:500 clamp(2rem,4vw,3.2rem)/1.15 var(--serif);margin:15px 0 18px;letter-spacing:-.035em}
+.section-intro{max-width:650px;color:var(--muted);margin:0 0 44px}
+header{position:fixed;z-index:50;top:0;left:0;right:0;transition:.35s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(9,13,25,.84);backdrop-filter:blur(18px);border-color:var(--line)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.brand{font:600 1rem var(--serif);letter-spacing:.12em}
+.brand span{color:var(--gold)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:.82rem;color:var(--silver);transition:.25s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-cta{border:1px solid rgba(197,168,117,.5);padding:9px 17px;border-radius:2px;color:var(--ivory)!important}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--ivory);padding:8px 11px}
+.hero{min-height:100svh;display:flex;align-items:center;padding:130px 0 80px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px}
+.hero-kicker{color:var(--gold);letter-spacing:.24em;text-transform:uppercase;font-size:.72rem;font-weight:700}
+h1{font:500 clamp(3.3rem,7vw,6.7rem)/1.02 var(--serif);letter-spacing:-.055em;margin:22px 0 14px}
+h1 .surname{display:block;color:var(--silver)}
+.hero-title{font-size:clamp(1rem,2vw,1.35rem);color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin:22px 0}
+.hero-copy{max-width:570px;color:var(--muted);font-size:1.03rem}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 21px;border:1px solid var(--gold);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;transition:.3s;cursor:pointer}
+.btn-primary{background:var(--gold);color:#101522}
+.btn-primary:hover{background:#dfc69d;transform:translateY(-3px);box-shadow:0 12px 30px rgba(197,168,117,.2)}
+.btn-outline{color:var(--ivory);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.hero-meta{display:flex;gap:25px;margin-top:42px;color:var(--muted);font-size:.78rem;flex-wrap:wrap}
+.hero-meta span{display:flex;align-items:center;gap:8px}
+.hero-meta i{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block}
+.moon-stage{min-height:480px;display:grid;place-items:center;position:relative}
+.moon-halo{position:absolute;width:min(38vw,440px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(208,218,235,.13),rgba(143,160,190,.06) 42%,transparent 70%);filter:blur(8px);animation:breathe 6s ease-in-out infinite}
+.moon{width:min(27vw,300px);aspect-ratio:1;border-radius:50%;position:relative;background:radial-gradient(circle at 35% 28%,#fffef7 0%,#d9dfeb 28%,#9ca9bf 63%,#56637a 100%);box-shadow:0 0 35px rgba(208,220,242,.28),0 0 100px rgba(158,178,211,.18),inset -22px -18px 38px rgba(35,47,70,.35);overflow:hidden;animation:float 7s ease-in-out infinite}
+.moon:before,.moon:after{content:"";position:absolute;border-radius:50%;background:rgba(91,105,130,.12);filter:blur(2px)}
+.moon:before{width:23%;height:17%;top:27%;left:23%;transform:rotate(-25deg)}
+.moon:after{width:18%;height:13%;right:18%;bottom:28%;transform:rotate(35deg)}
+.moon-shadow{position:absolute;width:100%;height:100%;border-radius:50%;background:linear-gradient(115deg,transparent 38%,rgba(9,13,25,.13) 60%,rgba(9,13,25,.45));}
+.orbit{position:absolute;width:min(42vw,500px);aspect-ratio:1;border:1px solid rgba(197,206,222,.2);border-radius:50%;transform:rotate(-24deg) scaleY(.34)}
+.orbit:after{content:"";position:absolute;width:8px;height:8px;background:var(--gold);border-radius:50%;top:50%;left:8%;box-shadow:0 0 16px var(--gold)}
+.orbit-two{width:min(48vw,570px);transform:rotate(45deg) scaleY(.28);border-color:rgba(197,206,222,.1)}
+.glyph{position:absolute;color:rgba(197,168,117,.55);font:1.5rem var(--serif);letter-spacing:.2em}
+.glyph.g1{top:8%;right:8%}.glyph.g2{bottom:10%;left:3%;font-size:1rem}
+.scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.scroll-cue:after{content:"";height:35px;width:1px;background:linear-gradient(var(--gold),transparent);position:absolute;top:26px;left:50%}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+.stat{background:rgba(16,23,41,.8);padding:20px}
+.stat strong{font:500 1.6rem var(--serif);display:block;color:var(--ivory)}
+.stat span{font-size:.72rem;color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:start}
+.about-text{max-width:900px}
+.about-symbol{font:5rem var(--serif);color:var(--silver);text-shadow:0 0 35px rgba(197,206,222,.35);z-index:1}
+.about-caption{position:absolute;bottom:22px;left:22px;color:var(--gold);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase}
+.about-text p{color:var(--muted);margin:0 0 18px}
+.info-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.info-item{padding:15px 0;border-top:1px solid var(--line)}
+.info-item small{display:block;color:var(--gold);font-size:.65rem;text-transform:uppercase;letter-spacing:.14em}
+.info-item strong{font-size:.9rem;font-weight:500}
+.timeline{margin-top:34px;border-left:1px solid rgba(197,168,117,.4);padding-left:22px}
+.timeline-item{position:relative;margin:0 0 24px}
+.timeline-item:before{content:"";position:absolute;width:7px;height:7px;background:var(--gold);border-radius:50%;left:-26px;top:8px;box-shadow:0 0 12px rgba(197,168,117,.6)}
+.timeline-item small{color:var(--gold);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+.timeline-item h3{font-size:1rem;margin:5px 0}
+.timeline-item p{font-size:.85rem;margin:0}
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project-card{position:relative;min-height:310px;padding:27px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(24,35,56,.85),rgba(12,18,32,.9));overflow:hidden;transition:.35s;display:flex;flex-direction:column}
+.project-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,rgba(197,168,117,.11),transparent 45%);opacity:.6;transition:.35s}
+.project-card:hover{transform:translateY(-6px);border-color:rgba(197,168,117,.55);box-shadow:0 20px 45px rgba(0,0,0,.22)}
+.project-card:hover:before{opacity:1}
+.project-top{display:flex;justify-content:space-between;align-items:center;position:relative}
+.project-number{font:1.1rem var(--serif);color:var(--gold)}
+.project-mark{font:1.8rem var(--serif);color:rgba(197,206,222,.5)}
+.project-card h3{font:500 1.35rem var(--serif);margin:26px 0 10px;position:relative}
+.project-card p{color:var(--muted);font-size:.87rem;margin:0 0 18px;position:relative}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;position:relative}
+.tag{font-size:.66rem;color:var(--silver);border:1px solid var(--line);padding:5px 9px;letter-spacing:.03em}
+.project-detail{margin-top:18px;padding-top:15px;border-top:1px solid var(--line);font-size:.8rem;color:var(--silver);position:relative}
+.project-detail summary{cursor:pointer;color:var(--gold);list-style:none}
+.project-detail summary:after{content:"＋";float:right}
+.project-detail[open] summary:after{content:"−"}
+.project-detail p{margin:12px 0 0}
+.project-links{position:relative;margin-top:auto;padding-top:22px}
+.project-link{display:inline-flex;align-items:center;gap:9px;padding:9px 13px;border:1px solid rgba(197,168,117,.48);color:var(--gold);font-size:.76rem;letter-spacing:.04em;transition:.25s}
+.project-link:hover{background:rgba(197,168,117,.1);border-color:var(--gold);transform:translateY(-2px)}
+.project-link span{font-size:1rem}
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.skill-group{padding:25px;border:1px solid var(--line);background:rgba(17,25,43,.65)}
+.skill-group h3{font:500 1.1rem var(--serif);margin:0 0 18px;color:var(--ivory)}
+.skill-list{display:flex;flex-wrap:wrap;gap:9px}
+.skill{padding:8px 12px;border:1px solid rgba(197,206,222,.17);color:var(--silver);font-size:.78rem;transition:.25s}
+.skill:hover{color:var(--night);background:var(--silver);border-color:var(--silver);transform:translateY(-2px)}
+.skill-note{font-size:.75rem;color:var(--muted);margin-top:24px}
+.achievement-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.achievement{border:1px solid var(--line);padding:19px;background:rgba(17,25,43,.45)}
+.achievement strong{display:block;font:500 1.15rem var(--serif);color:var(--gold)}
+.achievement span{font-size:.77rem;color:var(--muted)}
+.contact-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px}
+.contact-copy p{color:var(--muted);max-width:420px}
+.contact-links{display:grid;gap:12px;margin-top:30px}
+.contact-link{display:flex;gap:12px;align-items:center;color:var(--silver);font-size:.88rem;transition:.2s}
+.contact-link:hover{color:var(--gold)}
+.contact-link b{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);font-weight:400;color:var(--gold)}
+.contact-form{padding:28px;border:1px solid var(--line);background:rgba(17,25,43,.72)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:grid;gap:7px;margin-bottom:16px}
+.field label{font-size:.72rem;color:var(--silver);letter-spacing:.08em;text-transform:uppercase}
+.field input,.field textarea{width:100%;background:#0c1424;border:1px solid var(--line);color:var(--ivory);padding:12px 13px;outline:none;transition:.2s;border-radius:0}
+.field input:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(197,168,117,.08)}
+.field textarea{min-height:125px;resize:vertical}
+.form-status{font-size:.78rem;color:var(--gold);min-height:22px;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.75rem}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.back-top{color:var(--gold)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+.cursor-glow{position:fixed;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(190,205,231,.055),transparent 68%);pointer-events:none;z-index:0;transform:translate(-50%,-50%)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+@keyframes breathe{0%,100%{transform:scale(.94);opacity:.7}50%{transform:scale(1.06);opacity:1}}
+@media(max-width:850px){
+ .hero-grid,.about-grid,.contact-wrap{grid-template-columns:1fr}
+ .moon-stage{min-height:360px;grid-row:1}
+ .moon{width:min(48vw,260px)}.orbit{width:min(70vw,420px)}.orbit-two{width:min(78vw,470px)}
+ .nav-links{gap:16px}.nav-links a{font-size:.75rem}
+}
+@media(max-width:640px){
+ .container{width:min(100% - 34px,var(--max))}
+ .section{padding:78px 0}
+ .nav{height:68px}.menu-toggle{display:block}
+ .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:rgba(9,13,25,.97);padding:18px 24px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
+ .nav-links.open{display:flex}
+ .nav-links a{padding:12px 0;font-size:.9rem;border-bottom:1px solid rgba(197,206,222,.08)}
+ .nav-cta{text-align:center;margin-top:10px}
+ .hero{padding-top:100px;min-height:auto;padding-bottom:95px}
+ .hero-grid{gap:0}.moon-stage{min-height:280px;grid-row:auto}
+ .moon{width:190px}.orbit{width:270px}.orbit-two{width:310px}
+ h1{font-size:clamp(3rem,15vw,4.5rem)}
+ .hero-meta{gap:13px}.stats{grid-template-columns:1fr}
+ .project-grid,.skills-layout,.achievement-grid,.info-list,.form-row{grid-template-columns:1fr}
+ .project-card{min-height:280px;padding:22px}
+ .contact-form{padding:20px}
+ .scroll-cue{display:none}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas><div class="cursor-glow" id="cursorGlow"></div>
+<header id="header"><div class="container nav">
+ <a class="brand" href="#home">HANA<span>.</span></a>
+ <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+ <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+  <a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact" class="nav-cta">Contact</a>
+ </nav>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+ <div class="hero-content reveal">
+  <div class="hero-kicker">A mind for systems. A passion for building.</div>
+  <h1>Hana Salah <span class="surname">Masood.</span></h1>
+  <div class="hero-title">Software Engineer</div>
+  <p class="hero-copy">I build thoughtful software across backend engineering, distributed systems, and AI — turning complex ideas into reliable, meaningful experiences.</p>
+  <div class="hero-actions"><a class="btn btn-primary" href="#projects">Explore my work <span>↗</span></a><a class="btn btn-outline" href="#contact">Contact me</a></div>
+  <div class="hero-meta"><span><i></i> Assiut, Egypt</span><span><i></i> Open to relocating to Cairo</span></div>
+ </div>
+ <div class="moon-stage reveal" aria-label="Decorative moon illustration">
+  <div class="moon-halo"></div><div class="orbit"></div><div class="orbit orbit-two"></div>
+  <div class="moon"><div class="moon-shadow"></div></div>
+  <div class="glyph g1">☽</div><div class="glyph g2">𓂀 &nbsp; 𓆣 &nbsp; 𓇳</div>
+ </div>
+</div><div class="scroll-cue">Scroll to explore</div></section>
+
+<section class="section" id="about"><div class="container about-grid">
+  <div class="about-text reveal"><div class="eyebrow">The person behind the code</div><h2 class="section-heading">Behind the <em>work</em></h2>
+  <p>I'm a Computer Science graduate from Assiut University with a strong interest in software engineering and the systems that power the products we use every day.</p>
+  <p>My experience spans building REST APIs with .NET, designing distributed database architectures, exploring compiler construction in C++, and developing AI-powered applications. I enjoy understanding how things work beneath the surface — then using that understanding to build them better.</p>
+  <p>Beyond projects, I have been part of the ICPC Assiut University Community, mentoring newcomers and junior students in problem solving.</p>
+  <div class="info-list">
+   <div class="info-item"><small>Education</small><strong>B.Sc. Computer Science</strong></div>
+   <div class="info-item"><small>University</small><strong>Assiut University</strong></div>
+   <div class="info-item"><small>Graduation</small><strong>June 2026</strong></div>
+   <div class="info-item"><small>GPA</small><strong>3.76 / 4.00 · A-</strong></div>
+  </div>
+  <div class="timeline">
+   <div class="timeline-item"><small>July 2025</small><h3>.NET Trainee Intern · Ejada Systems</h3><p>Hands-on training in ASP.NET Core MVC, Entity Framework, SQL Server, relational data modeling, and CRUD operations.</p></div>
+   <div class="timeline-item"><small>Community</small><h3>ICPC Assiut University Community</h3><p>Mentored newcomers and junior phases in programming and problem solving.</p></div>
+  </div>
+ </div>
+</div></section>
+
+<section class="section" id="projects"><div class="container">
+ <div class="eyebrow">Selected work</div><h2 class="section-heading">Built with purpose.</h2><p class="section-intro">A selection of projects where I explored systems, performance, backend architecture, and applied AI. Open each detail to learn more.</p>
+ <div class="project-grid">
+  <article class="project-card reveal"><div class="project-top"><span class="project-number">01 / SYSTEMS</span><span class="project-mark">⌘</span></div><h3>Distributed Database System</h3><p>A federated database horizontally sharded across three nodes, coordinated through a central gateway.</p><div class="tags"><span class="tag">Go</span><span class="tag">Python</span><span class="tag">.NET</span><span class="tag">MySQL</span></div><details class="project-detail"><summary>Explore the architecture</summary><p>Implemented query routing, shard metadata, and health checks. Added automatic leader election and failover, state resynchronization after gateway recovery, and HMAC authentication for node-to-node REST calls.</p></details><div class="project-links"><a class="project-link" href="https://github.com/hanasoliman72/distributed-db" target="_blank" rel="noopener noreferrer">View on GitHub <span>↗</span></a></div></article>
+  <article class="project-card reveal"><div class="project-top"><span class="project-number">02 / LANGUAGE TOOLS</span><span class="project-mark">λ</span></div><h3>Astervoid-lang Compiler</h3><p>A C++ compiler for a custom programming language, built as part of a three-person team.</p><div class="tags"><span class="tag">C++</span><span class="tag">DFA</span><span class="tag">AST</span><span class="tag">Compiler Design</span></div><details class="project-detail"><summary>Explore the implementation</summary><p>Personally implemented the lexer, parser, and semantic analyzer. The lexer uses a DFA-based scanner; the recursive-descent parser produces an AST; semantic analysis uses a symbol table with scope handling.</p></details><div class="project-links"><a class="project-link" href="https://github.com/hanasoliman72/astervoid-lang" target="_blank" rel="noopener noreferrer">View on GitHub <span>↗</span></a></div></article>
+  <article class="project-card reveal"><div class="project-top"><span class="project-number">03 / PERFORMANCE</span><span class="project-mark">⏣</span></div><h3>Parallel Programming</h3><p>Parallelized a numerical-integration workload and investigated synchronization and memory-performance behavior.</p><div class="tags"><span class="tag">C</span><span class="tag">OpenMP</span><span class="tag">MPI</span></div><details class="project-detail"><summary>Explore the results</summary><p>Compared critical sections, atomics, locks, and reductions. Fixed false sharing with cache-line padding and thread-private partial sums. The reduction version achieved 0.063s versus 0.194s serial — a 3.1× speedup on four threads. Also demonstrated and fixed an MPI send/receive deadlock using MPI_Sendrecv.</p></details><div class="project-links"><a class="project-link" href="https://github.com/jannah-ayman/parallel-tasks" target="_blank" rel="noopener noreferrer">View on GitHub <span>↗</span></a></div></article>
+  <article class="project-card reveal"><div class="project-top"><span class="project-number">04 / AI & EDUCATION</span><span class="project-mark">✧</span></div><h3>ScholaAI</h3><p>An AI-powered online tutoring platform with real-time video sessions and intelligent student monitoring.</p><div class="tags"><span class="tag">.NET</span><span class="tag">Python</span><span class="tag">WebRTC</span><span class="tag">SignalR</span></div><details class="project-detail"><summary>Explore the features</summary><p>Designed and built the .NET REST API backend for session management and business logic; implemented video sessions and screen sharing with mediasoup WebRTC; automated session transcription and summarization using Groq Whisper and LLaMA; stored recordings in Supabase.</p></details><div class="project-links"><a class="project-link" href="https://github.com/hanasoliman72/ScholaAi" target="_blank" rel="noopener noreferrer">View on GitHub <span>↗</span></a></div></article>
+  <article class="project-card reveal"><div class="project-top"><span class="project-number">05 / APPLIED AI</span><span class="project-mark">☼</span></div><h3>SmartFaddan</h3><p>An agentic assistant designed to help Egyptian farmers investigate crop diseases and make informed decisions.</p><div class="tags"><span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">Pinecone</span></div><details class="project-detail"><summary>Explore the agent</summary><p>Built an eight-node LangGraph agent that routes queries across retrieval-augmented generation, live weather, and Tavily web search. Added a self-correction loop and SQLite-backed conversation memory for crop and location context. Evaluated it against a raw-LLM baseline on ten farming queries.</p></details><div class="project-links"><a class="project-link" href="https://github.com/hanasoliman72/SmartFaddan" target="_blank" rel="noopener noreferrer">View on GitHub <span>↗</span></a></div></article>
+  <article class="project-card reveal"><div class="project-top"><span class="project-number">06 / WEB DEVELOPMENT</span><span class="project-mark">⌑</span></div><h3>Online Book Store</h3><p>A web application for browsing, searching, and managing an online book catalog.</p><div class="tags"><span class="tag">ASP.NET Core MVC</span><span class="tag">C#</span><span class="tag">Entity Framework</span></div><details class="project-detail"><summary>Explore the application</summary><p>Developed as the capstone deliverable of the Ejada internship. Includes user authentication and role-based access control, with admin capabilities to add, edit, and remove books.</p></details><div class="project-links"><a class="project-link" href="https://github.com/hanasoliman72/Ejada-Online-BookStore" target="_blank" rel="noopener noreferrer">View on GitHub <span>↗</span></a></div></article>
+ </div>
+</div></section>
+
+<section class="section" id="skills"><div class="container">
+ <div class="eyebrow">Tools of the craft</div><h2 class="section-heading">The constellation of skills.</h2><p class="section-intro">A growing toolkit for solving problems — from low-level logic to distributed services and intelligent applications.</p>
+ <div class="skills-layout">
+  <div class="skill-group reveal"><h3>Programming Languages</h3><div class="skill-list"><span class="skill">C</span><span class="skill">C++</span><span class="skill">C#</span><span class="skill">Python</span><span class="skill">Java</span><span class="skill">Go</span><span class="skill">SQL</span><span class="skill">PHP</span><span class="skill">MATLAB</span></div></div>
+  <div class="skill-group reveal"><h3>Backend & Frameworks</h3><div class="skill-list"><span class="skill">ASP.NET Core MVC</span><span class="skill">.NET Framework</span><span class="skill">Entity Framework Core</span><span class="skill">REST APIs</span><span class="skill">SignalR</span><span class="skill">WebRTC</span></div></div>
+  <div class="skill-group reveal"><h3>AI & Machine Learning</h3><div class="skill-list"><span class="skill">LangChain</span><span class="skill">LangGraph</span><span class="skill">Hugging Face</span><span class="skill">RAG Pipelines</span><span class="skill">Prompt Engineering</span></div></div>
+  <div class="skill-group reveal"><h3>Databases</h3><div class="skill-list"><span class="skill">MySQL</span><span class="skill">Microsoft SQL Server</span><span class="skill">SQLite</span><span class="skill">Pinecone</span></div></div>
+  <div class="skill-group reveal"><h3>Systems & Computing</h3><div class="skill-list"><span class="skill">Operating Systems</span><span class="skill">Distributed Databases</span><span class="skill">Compiler Design</span><span class="skill">Parallel Computing</span><span class="skill">OpenMP</span><span class="skill">MPI</span></div></div>
+  <div class="skill-group reveal"><h3>Tools & Practices</h3><div class="skill-list"><span class="skill">Git</span><span class="skill">GitHub</span><span class="skill">Postman</span><span class="skill">Linux CLI</span><span class="skill">VMware</span><span class="skill">Supabase</span><span class="skill">Firebase</span><span class="skill">Unity</span><span class="skill">Agile / Scrum</span></div></div>
+ </div>
+ <div class="eyebrow" style="margin-top:55px">Milestones</div><h3 class="section-heading" style="font-size:1.8rem">Competition & achievement</h3>
+ <div class="achievement-grid">
+  <div class="achievement reveal"><strong>128th / 270</strong><span>ECPC Finals 2025 · Teams across Egypt</span></div>
+  <div class="achievement reveal"><strong>18th / 223</strong><span>ECPC Qualifications 2025 · Upper Egypt</span></div>
+  <div class="achievement reveal"><strong>46th / 450</strong><span>ECPC Qualifications 2024 · Upper Egypt</span></div>
+ </div>
+</div></section>
+
+<section class="section" id="contact"><div class="container contact-wrap">
+ <div class="contact-copy reveal"><div class="eyebrow">The next chapter</div><h2 class="section-heading">Let's build<br><em>something meaningful.</em></h2><p>Have an interesting idea, an opportunity, or a problem worth solving? I'd be glad to hear from you.</p>
+  <div class="contact-links">
+   <a class="contact-link" href="mailto:hana.s.masoud@gmail.com"><b>✉</b> hana.s.masoud@gmail.com</a>
+   <a class="contact-link" href="https://www.linkedin.com/in/hana-soliman" target="_blank" rel="noreferrer"><b>in</b> LinkedIn</a>
+   <a class="contact-link" href="https://github.com/hanasoliman72" target="_blank" rel="noreferrer"><b>⌘</b> GitHub</a>
+  </div>
+ </div>
+ <form class="contact-form reveal" id="contactForm">
+  <div class="form-row"><div class="field"><label for="name">Your name</label><input id="name" name="name" required placeholder="Jane Doe"></div><div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" required placeholder="jane@example.com"></div></div>
+  <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" required placeholder="Let's work together"></div>
+  <div class="field"><label for="message">Message</label><textarea id="message" name="message" required placeholder="Tell me a little about what you have in mind..."></textarea></div>
+  <button class="btn btn-primary" type="submit">Send a message <span>↗</span></button><div class="form-status" id="formStatus" role="status"></div>
+ </form>
+</div></section>
+</main>
+<footer><div class="container footer-inner"><span>© <span id="year"></span> Hana Salah Masood. Crafted under the same moon.</span><a class="back-top" href="#home">Back to the beginning ↑</a></div></footer>
+<script>
+const header=document.getElementById('header');
+const menuToggle=document.getElementById('menuToggle');
+const navLinks=document.getElementById('navLinks');
+window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>24));
+menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.textContent=open?'✕':'☰'});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.textContent='☰'}));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const sections=[...document.querySelectorAll('main section[id]')],links=[...document.querySelectorAll('.nav-links a')];
+const activeObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)links.forEach(link=>link.classList.toggle('active',link.getAttribute('href')==='#'+entry.target.id))}),{rootMargin:'-35% 0px -55% 0px'});
+sections.forEach(section=>activeObserver.observe(section));
+document.getElementById('year').textContent=new Date().getFullYear();
+const glow=document.getElementById('cursorGlow');
+if(matchMedia('(pointer:fine)').matches){window.addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'})}else{glow.remove()}
+const canvas=document.getElementById('stars'),ctx=canvas.getContext('2d');let stars=[];
+function makeStars(){const dpr=Math.min(devicePixelRatio||1,2);canvas.width=innerWidth*dpr;canvas.height=innerHeight*dpr;canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';ctx.setTransform(dpr,0,0,dpr,0,0);stars=Array.from({length:Math.floor(innerWidth*innerHeight/8500)},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.2+.2,a:Math.random()*.55+.15,p:Math.random()*Math.PI*2}))}
+function drawStars(t=0){ctx.clearRect(0,0,innerWidth,innerHeight);for(const s of stars){const alpha=s.a*(.65+.35*Math.sin(t*.0007+s.p));ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(218,226,241,${alpha})`;ctx.fill()}requestAnimationFrame(drawStars)}
+makeStars();requestAnimationFrame(drawStars);addEventListener('resize',makeStars);
+document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const data=new FormData(e.currentTarget);const subject=encodeURIComponent(data.get('subject'));const body=encodeURIComponent(`Hi Hana,\n\n${data.get('message')}\n\nFrom: ${data.get('name')}\nEmail: ${data.get('email')}`);document.getElementById('formStatus').textContent='Opening your email app to send this message…';window.location.href=`mailto:hana.s.masoud@gmail.com?subject=${subject}&body=${body}`});
+</script>
+</body>
+</html>
